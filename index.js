@@ -12,9 +12,8 @@ const app = express();
 /**
  * call our register function
  * which will add our routes
- * 
+ * and middleware
  */
-
 
 require('./server').create(({ register }) => {
     

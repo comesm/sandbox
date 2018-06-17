@@ -11,7 +11,9 @@ function isEmpty(obj) {
     && obj.constructor === Object
 
 }
-
+/**
+ * fetch wrapper function
+ */
 function fetchData(uri, port) {
     return new Promise((resolve, reject) => {
         fetch(`http://localhost:${port}${uri}`)

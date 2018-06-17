@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "lab -v -t 70 -m 4000"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,9 @@
     "node-fetch": "^2.1.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "code": "^5.2.0",
+    "lab": "^15.5.0",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0"
   }
 }
