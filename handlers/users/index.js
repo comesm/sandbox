@@ -15,6 +15,8 @@ function findMultiUser(req, res) {
            resultObj.users = resultObj.users.concat(response);
            res.json(resultObj);
         })          
+     }).catch(err => {
+        res.status(500).json({err:"Internal Server Error"});
      });
 }
 
