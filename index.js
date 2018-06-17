@@ -9,9 +9,15 @@ const listenUpport = config.get('listenUpport');
 
 const app = express();
 
+/**
+ * call our register function
+ * which will add our routes
+ * 
+ */
+
 
 require('./server').create(({ register }) => {
-
+    
     register(app);
 
     http.createServer(app).listen(listenUpport, (err, data) => { 

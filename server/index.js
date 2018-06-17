@@ -1,31 +1,31 @@
 'use strict'
-const singleUserHandler = require('../handlers/singleUser');
-const multiUserHandler = require('../handlers/users');
+const userHandler = require('../handlers/users');
 const compression = require('compression');
 
 const routes = {  
     
+      /**
+       * define a function that when called will
+       * register middleware and routes below  
+       * 
+       */
     
     register(app) {
         
       app.use(compression());
 
       app.get('/users',
-        multiUserHandler.findMultiUser.validate,
-        multiUserHandler.findMultiUser.handler       
+      userHandler.find.validate,
+      userHandler.find.handler       
       )  
-              
+
       app.get('/users/:username',
-        singleUserHandler.findUser.validate,
-        singleUserHandler.findUser.handler  
-      )
-      
+        userHandler.find.validate,
+        userHandler.find.handler  
+      )      
     }
 }
 
-
-
 module.exports.create = function (callback) {
-
     callback(routes);
 }

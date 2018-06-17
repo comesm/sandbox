@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     isEmpty,
-    fetchUsers
+    fetchData
 }
 
 
@@ -12,8 +12,7 @@ function isEmpty(obj) {
 
 }
 
-function fetchUsers(uri, port) {
-
+function fetchData(uri, port) {
     return new Promise((resolve, reject) => {
         fetch(`http://localhost:${port}${uri}`)
           .then(results => { 
