@@ -1,0 +1,6 @@
+{
+    "appName": "ListenUp",
+    "listenUpport": 8005,
+    "friendServicePort": 8000,
+    "playServicePort": 8001 
+}
