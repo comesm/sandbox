@@ -14,13 +14,13 @@ function isEmpty(obj) {
 /**
  * fetch wrapper function
  */
-function fetchData(uri, port) {
-    return new Promise((resolve, reject) => {
-        fetch(`http://localhost:${port}${uri}`)
-          .then(results => { 
-              resolve(results.json());
-          }
-        )
-        .catch(err => reject(err));
-    })
+async function fetchData(uri, port) {
+      let result;
+       try {
+        result = await 
+          fetch(`http://localhost:${port}${uri}`);
+        return result.json();
+       } catch(e) {
+           return e.json();
+       }
 }
